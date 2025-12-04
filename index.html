@@ -1,172 +1,236 @@
 <!DOCTYPE html>
+
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Portofolio Siswa - Desti Cahya Lestari</title>
+
     <!-- Memuat Bootstrap 5 CSS dari CDN -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Memuat Bootstrap Icons (bi) -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
     <!-- Memuat Font Inter dari Google Fonts -->
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
     
+
     <style>
+
         /* Menggunakan font Inter untuk seluruh dokumen */
+
         body {
+
             font-family: 'Inter', sans-serif;
+
             color: #333;
+
             background-color: #f8f9fa; 
+
             scroll-behavior: smooth; 
+
         }
+
+
 
         /* TEMA WARNA CERAH: KUNING (UTAMA) & CYAN (AKSEN) */
+
         :root {
+
             --color-primary: #FFD700; /* Kuning Emas Cerah */
-            --color-accent: #00ADB5;  /* Cyan/Teal Cerah */
+
+            --color-accent: #00ADB5;  /* Cyan/Teal Cerah */
+
             --color-dark-text: #333333;
+
             --color-light-text: #ffffff;
+
         }
+
+
 
         /* Latar Belakang Utama (Hero & Kontak) */
+
         .bg-theme-primary {
+
             background-color: var(--color-primary) !important;
+
             color: var(--color-dark-text) !important;
+
         }
-        /* Navbar & Footer (Menggunakan gelap agar kontras) */
+
+        /* Navbar & Footer (Menggunakan warna gelap agar kontras) */
+
         .bg-theme-dark {
+
             background-color: #343a40 !important; 
+
         }
+
+
 
         /* Styling tambahan agar gambar profil terlihat bagus */
+
         .profile-img {
+
             width: 250px;
+
             height: 250px;
+
             object-fit: cover;
+
             /* Garis luar dibuat hitam agar kontras dengan latar kuning */
+
             border: 5px solid var(--color-dark-text) !important; 
+
         }
+
+
 
         /* Styling untuk tombol utama (menggunakan warna aksen cyan) */
+
         .btn-custom-cta {
+
             background-color: var(--color-accent) !important; 
+
             border-color: var(--color-accent) !important;
+
             color: var(--color-light-text) !important;
+
             transition: all 0.3s ease;
+
         }
+
         .btn-custom-cta:hover {
+
             transform: translateY(-2px);
+
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
             background-color: #00939a !important; /* Slightly darker cyan */
+
             border-color: #00939a !important;
+
         }
+
+
 
         /* Styling untuk kartu portofolio */
+
         .card {
+
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+
             border-radius: 0.75rem; 
+
             border: none;
+
         }
+
         .card:hover {
+
             transform: translateY(-5px);
+
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
         }
+
         .card-img-top {
+
             border-top-left-radius: 0.75rem;
+
             border-top-right-radius: 0.75rem;
+
             height: 200px;
+
             object-fit: cover;
+
         }
+
         .card-img-container {
+
             /* Placeholder styling for images */
+
             height: 200px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             background-color: #e9ecef;
+
             color: #6c757d;
+
             border-top-left-radius: 0.75rem;
+
             border-top-right-radius: 0.75rem;
+
             font-size: 0.9rem;
+
             text-align: center;
+
         }
+
+
 
         /* Warna badge sesuai tema cerah */
+
         .badge-theme-primary {
+
             background-color: var(--color-primary) !important;
+
             color: var(--color-dark-text) !important;
+
         }
+
         .badge-theme-accent {
+
             background-color: var(--color-accent) !important;
+
         }
+
+
 
         /* Utility class untuk teks rata kiri di desktop, rata tengah di mobile */
+
         @media (max-width: 991.98px) {
+
             .text-lg-start-mobile-center {
+
                 text-align: center !important;
+
             }
+
             /* Pada mobile, gambar profil dipusatkan */
+
             .profile-img-container {
+
                 display: flex;
+
                 justify-content: center;
+
                 align-items: center;
+
                 margin-bottom: 2rem;
+
             }
-        }
-        
-        /* ---------------------------------------------------- */
-        /* --- CSS BARU: Perbaikan Layout Timeline Pendidikan --- */
-        /* ---------------------------------------------------- */
-        .timeline {
-            position: relative;
-            padding: 0;
-            list-style: none;
-            margin-left: 10px; /* Jarak dari kiri */
-        }
-        
-        /* Garis vertikal utama */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #dee2e6; /* Warna abu-abu muda */
-            left: 50px; /* Posisi garis tengah (setelah icon) */
-            margin-left: -1px;
+
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem; /* Jarak antar item */
-            padding-left: 70px; /* Ruang untuk ikon dan garis */
-        }
-
-        /* Ikon (lingkaran) pada timeline */
-        .timeline-icon {
-            color: var(--color-light-text);
-            background-color: var(--color-accent);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            left: 30px; /* Posisi ikon menempel ke garis */
-            top: 0;
-            box-shadow: 0 0 0 3px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 3px rgba(0, 0, 0, 0.05);
-            font-size: 1.1rem;
-        }
-        .timeline-text {
-            color: var(--color-accent);
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            line-height: 1;
-        }
     </style>
 </head>
+
 <body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-offset="56">
 
     <!-- 1. Navbar (Menggunakan warna gelap agar font putih dan aksen kuning terlihat jelas) -->
@@ -260,6 +324,7 @@
                 <div class="col-lg-6">
                     <p class="lead">
                         Saya Desti Cahya Lestari, seorang siswi kelas XII-3 di SMAN 10 Garut yang bersemangat tinggi dan fokus pada pengembangan diri. Saya memiliki minat besar di bidang Seni, kreativitas, dan Kepemimpinan, yang terbukti dari peran aktif saya di sekolah.
+
                     </p>
                     
                     <!-- DAFTAR PRESTASI UTAMA (Badge) -->
@@ -275,42 +340,42 @@
                         <i class="bi bi-book me-1"></i> Hobi: Membaca Buku & Menulis
                     </span>
                     
-                    <!-- TIMELINE PENDIDIKAN -->
+                    <!-- RIWAYAT PENDIDIKAN SEDERHANA -->
                     <hr>
-                    <h4 class="mb-4 border-bottom pb-2">Riwayat Pendidikan (Timeline)</h4>
-                    <div class="timeline">
-                        
-                        <!-- ITEM 1: SMAN 10 Garut (SMA) -->
-                        <div class="timeline-item">
-                            <div class="timeline-icon"><i class="bi bi-mortarboard-fill"></i></div> <!-- Icon disesuaikan -->
-                            <p class="timeline-text text-uppercase">SMA</p> <!-- Teks jelas dan tebal -->
-                            <h6 class="fw-bold mb-1">SMAN 10 Garut (2022 - Sekarang)</h6>
-                            <p class="text-muted small mb-0">Kelas XII-3</p>
-                            <p class="small">Fokus pada pendidikan dan cita-cita.</p>
+                    <h4 class="mb-4">Riwayat Pendidikan</h4>
+                    
+                    <!-- Satu Kolom Untuk Semua Riwayat Pendidikan -->
+                    <div class="border rounded p-3">
+                        <div class="row mb-3">
+                            <div class="col-4 fw-bold">SMA</div>
+                            <div class="col-8">
+                                <strong>SMAN 10 Garut</strong> (2022 - Sekarang)<br>
+                                <small class="text-muted">Kelas XII-3 | Fokus pada pendidikan dan cita-cita.</small>
+                            </div>
                         </div>
                         
-                        <!-- ITEM 2: SMPN 3 LIMBANGAN (SMP) -->
-                        <div class="timeline-item">
-                            <div class="timeline-icon"><i class="bi bi-building"></i></div>
-                            <p class="timeline-text text-uppercase">SMP</p> <!-- Teks jelas dan tebal -->
-                            <h6 class="fw-bold mb-1">SMPN 3 LIMBANGAN (2019 - 2022)</h6>
-                            <p class="text-muted small mb-0">Lulus dengan dasar akademik yang kuat.</p>
+                        <div class="row mb-3">
+                            <div class="col-4 fw-bold">SMP</div>
+                            <div class="col-8">
+                                <strong>SMPN 3 LIMBANGAN</strong> (2019 - 2022)<br>
+                                <small class="text-muted">Lulus dengan dasar akademik yang kuat.</small>
+                            </div>
                         </div>
                         
-                        <!-- ITEM 3: SDN 1 LINGKUNGPASIR (SD) -->
-                        <div class="timeline-item">
-                            <div class="timeline-icon"><i class="bi bi-house"></i></div>
-                            <p class="timeline-text text-uppercase">SD</p> <!-- Teks jelas dan tebal -->
-                            <h6 class="fw-bold mb-1">SDN 1 LINGKUNGPASIR (2013 - 2019)</h6>
-                            <p class="text-muted small mb-0">Fondasi disiplin dan minat literasi.</p>
+                        <div class="row mb-3">
+                            <div class="col-4 fw-bold">SD</div>
+                            <div class="col-8">
+                                <strong>SDN 1 LINGKUNGPASIR</strong> (2013 - 2019)<br>
+                                <small class="text-muted">Fondasi disiplin dan minat literasi.</small>
+                            </div>
                         </div>
                         
-                        <!-- ITEM 4: PAUD & TK AL-HUDLORI (PAUD/TK) -->
-                        <div class="timeline-item">
-                            <div class="timeline-icon"><i class="bi bi-balloon-fill"></i></div>
-                            <p class="timeline-text text-uppercase">PAUD/TK</p> <!-- Teks jelas dan tebal -->
-                            <h6 class="fw-bold mb-1">PAUD & TK AL-HUDLORI (Pra-SD)</h6>
-                            <p class="text-muted small mb-0">Memulai jejak belajar sejak usia dini.</p>
+                        <div class="row">
+                            <div class="col-4 fw-bold">PAUD/TK</div>
+                            <div class="col-8">
+                                <strong>PAUD & TK AL-HUDLORI</strong> (Pra-SD)<br>
+                                <small class="text-muted">Memulai jejak belajar sejak usia dini.</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -384,7 +449,7 @@
                             <p class="card-text text-muted mb-3 flex-grow-1">
                                 Memimpin program dan anggota ekstrakurikuler TenArs selama satu periode kepengurusan.
                             </p>
-                            <span class="badge badge-theme-primary mt-auto">Kepemimpinan</span>
+                            <span class="mt-auto">Kepemimpinan</span> <!-- Menghapus badge warna -->
                         </div>
                     </div>
                 </div>
@@ -404,7 +469,7 @@
                             <p class="card-text text-muted mb-3 flex-grow-1">
                                 Dikenal sebagai penulis terbaik dalam event tingkat nasional, kategori puisi.
                             </p>
-                            <span class="badge badge-theme-accent mt-auto">Seni & Literasi</span>
+                            <span class="mt-auto">Seni & Literasi</span> <!-- Menghapus badge warna -->
                         </div>
                     </div>
                 </div>
@@ -424,7 +489,7 @@
                             <p class="card-text text-muted mb-3 flex-grow-1">
                                 Rutin berolahraga dan terlibat dalam sebuah komunitas olahraga.
                             </p>
-                            <span class="badge bg-danger mt-auto">Hobi Olahraga</span>
+                            <span class="mt-auto">Hobi Olahraga</span> <!-- Menghapus badge warna -->
                         </div>
                     </div>
                 </div>
@@ -444,7 +509,7 @@
                             <p class="card-text text-muted mb-3 flex-grow-1">
                                 Fokus pada pemahaman konsep dan eksperimen Kimia, sebagai bekal masuk jurusan sains.
                             </p>
-                            <span class="badge bg-info mt-auto">Minat Sains</span>
+                            <span class="mt-auto">Minat Sains</span> <!-- Menghapus badge warna -->
                         </div>
                     </div>
                 </div>
@@ -481,7 +546,7 @@
                                     <label for="email" class="form-label">Email</label>
                                     <div class="input-group">
                                         <span class="input-group-text rounded-start"><i class="bi bi-at"></i></span>
-                                        <input type="email" class="form-control rounded-end" id="email" required>
+                                        <input type="email" class="form-control rounded-end" id="email" placeholder="contoh@domain.com" required>
                                     </div>
                                 </div>
 
@@ -501,14 +566,39 @@
                                     </div>
                                 </div>
                                 
-                                <!-- Tombol Kirim (menggunakan warna aksen Cyan) -->
+                                <!-- Tombol Kirim (sederhana) -->
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-custom-cta btn-lg fw-bold w-100">
-                                        <i class="bi bi-send-fill me-2"></i>Kirim Pesan
+                                    <button type="submit" style="background-color: #00ADB5; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 15px;">
+                                        Kirim Pesan
                                     </button>
                                 </div>
                             </div>
                         </form>
+                    </div>
+                    
+                    <!-- Informasi Kontak Tambahan (Tanpa Ikon) -->
+                    <div class="card mt-4 p-4 shadow-sm">
+                        <h5 class="fw-bold mb-3">Informasi Kontak</h5>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div>
+                                    <small class="text-muted d-block">Email</small>
+                                    <span>desticahyalestari@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <small class="text-muted d-block">Telepon</small>
+                                    <span>081321150588</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <small class="text-muted d-block">Sekolah</small>
+                                    <span>SMAN 10 Garut</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -541,7 +631,7 @@
                     </div>
                     
                     <!-- Hak Cipta -->
-                    <p class="mb-0">© 2025 Desti Cahya Lestari.</p>
+                    <p class="mb-0">© 2025 Desti Cahya Lestari. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -551,4 +641,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
