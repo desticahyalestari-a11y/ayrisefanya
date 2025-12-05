@@ -200,7 +200,29 @@
 
         }
 
-
+        
+        /* Tabel riwayat pendidikan */
+        .education-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        
+        .education-table th, .education-table td {
+            border: 1px solid #dee2e6;
+            padding: 0.75rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        .education-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .education-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
 
         /* Utility class untuk teks rata kiri di desktop, rata tengah di mobile */
 
@@ -225,9 +247,16 @@
                 margin-bottom: 2rem;
 
             }
-
+            
+            /* Tabel responsif di mobile */
+            .education-table {
+                font-size: 0.9rem;
+            }
+            
+            .education-table th, .education-table td {
+                padding: 0.5rem;
+            }
         }
-
     </style>
 </head>
 
@@ -317,72 +346,70 @@
     <!-- 3. About Section (Bagian Tentang) -->
     <section class="bg-light py-5" id="tentang">
         <div class="container">
-            <h2 class="text-center fw-bold mb-5">Tentang Saya & Keahlian</h2>
-            <div class="row g-5">
-                
-                <!-- Kolom Kiri: Ringkasan Diri, Prestasi Utama & Timeline Pendidikan -->
-                <div class="col-lg-6">
-                    <p class="lead">
+            <h2 class="text-center fw-bold mb-5">Tentang Saya</h2>
+            <div class="row">
+                <div class="col-12">
+                    <p class="lead text-center">
                         Saya Desti Cahya Lestari, seorang siswi kelas XII-3 di SMAN 10 Garut yang bersemangat tinggi dan fokus pada pengembangan diri. Saya memiliki minat besar di bidang Seni, kreativitas, dan Kepemimpinan, yang terbukti dari peran aktif saya di sekolah.
-
                     </p>
                     
                     <!-- DAFTAR PRESTASI UTAMA (Badge) -->
                     <hr>
-                    <h4 class="mb-3">Prestasi & Hobi Utama</h4>
-                    <span class="badge badge-theme-primary fw-semibold p-2 mb-2 me-2 shadow-sm">
-                        <i class="bi bi-star-fill me-1"></i> Ketua Umum Ekstrakurikuler Seni (TenArs)
-                    </span>
-                    <span class="badge badge-theme-accent fw-semibold p-2 mb-2 me-2 shadow-sm">
-                        <i class="bi bi-pencil-square me-1"></i> Penulis Puisi Terbaik Nasional
-                    </span>
-                    <span class="badge bg-secondary fw-semibold p-2 mb-2 shadow-sm">
-                        <i class="bi bi-book me-1"></i> Hobi: Membaca Buku & Menulis
-                    </span>
+                    <h4 class="mb-3 text-center">Prestasi & Hobi Utama</h4>
+                    <div class="text-center">
+                        <span class="badge badge-theme-primary fw-semibold p-2 mb-2 me-2 shadow-sm">
+                            <i class="bi bi-star-fill me-1"></i> Ketua Umum Ekstrakurikuler Seni (TenArs)
+                        </span>
+                        <span class="badge badge-theme-accent fw-semibold p-2 mb-2 me-2 shadow-sm">
+                            <i class="bi bi-pencil-square me-1"></i> Penulis Puisi Terbaik Nasional
+                        </span>
+                        <span class="badge bg-secondary fw-semibold p-2 mb-2 shadow-sm">
+                            <i class="bi bi-book me-1"></i> Hobi: Membaca Buku & Menulis
+                        </span>
+                    </div>
                     
                     <!-- RIWAYAT PENDIDIKAN SEDERHANA -->
                     <hr>
-                    <h4 class="mb-4">Riwayat Pendidikan</h4>
+                    <h4 class="mb-4 text-center">Riwayat Pendidikan</h4>
                     
-                    <!-- Satu Kolom Untuk Semua Riwayat Pendidikan -->
-                    <div class="border rounded p-3">
-                        <div class="row mb-3">
-                            <div class="col-4 fw-bold">SMA</div>
-                            <div class="col-8">
-                                <strong>SMAN 10 Garut</strong> (2022 - Sekarang)<br>
-                                <small class="text-muted">Kelas XII-3 | Fokus pada pendidikan dan cita-cita.</small>
-                            </div>
-                        </div>
-                        
-                        <div class="row mb-3">
-                            <div class="col-4 fw-bold">SMP</div>
-                            <div class="col-8">
-                                <strong>SMPN 3 LIMBANGAN</strong> (2019 - 2022)<br>
-                                <small class="text-muted">Lulus dengan dasar akademik yang kuat.</small>
-                            </div>
-                        </div>
-                        
-                        <div class="row mb-3">
-                            <div class="col-4 fw-bold">SD</div>
-                            <div class="col-8">
-                                <strong>SDN 1 LINGKUNGPASIR</strong> (2013 - 2019)<br>
-                                <small class="text-muted">Fondasi disiplin dan minat literasi.</small>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-4 fw-bold">PAUD/TK</div>
-                            <div class="col-8">
-                                <strong>PAUD & TK AL-HUDLORI</strong> (Pra-SD)<br>
-                                <small class="text-muted">Memulai jejak belajar sejak usia dini.</small>
-                            </div>
-                        </div>
+                    <!-- Tabel Riwayat Pendidikan -->
+                    <div class="table-responsive">
+                        <table class="education-table">
+                            <thead>
+                                <tr>
+                                    <th>Nama Sekolah</th>
+                                    <th>Periode</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>PAUD/TK</strong><br>PAUD & TK AL-HUDLORI</td>
+                                    <td>Pra-SD</td>
+                                    <td>Memulai jejak belajar sejak usia dini.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SD</strong><br>SDN 1 LINGKUNGPASIR</td>
+                                    <td>2013 - 2019</td>
+                                    <td>Fondasi disiplin dan minat literasi.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SMP</strong><br>SMPN 3 LIMBANGAN</td>
+                                    <td>2019 - 2022</td>
+                                    <td>Lulus dengan dasar akademik yang kuat.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SMA</strong><br>SMAN 10 Garut</td>
+                                    <td>2022 - Sekarang</td>
+                                    <td>Kelas XII-3 | Fokus pada pendidikan dan cita-cita.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                
-                <!-- Kolom Kanan: Daftar Keahlian -->
-                <div class="col-lg-6">
-                    <h4 class="mb-3">Keahlian & Minat (Skillset)</h4>
+                    
+                    <!-- Keahlian & Minat -->
+                    <hr>
+                    <h4 class="mb-3 text-center">Keahlian & Minat (Skillset)</h4>
                     <div class="list-group shadow-sm">
                         
                         <div class="list-group-item d-flex align-items-start">
